@@ -13,7 +13,7 @@ App Build with Spring Framework as Back-End.
 1.1 The Goal
 
 Maharishi University of Management has asked you to design and develop a Student Registration System (MUMSched) for their Computer Science department.
- The system will enable students to register online for courses each semester, as well as track their progress toward completion of their degree.
+The system will enable students to register online for courses each semester, as well as track their progress toward completion of their degree.
 
 When a student first enrolls at the university, he/she uses the MUMSched to create a plan of study that lists the courses he/she plans on taking to satisfy a particular degree program, 
 and chooses a faculty advisor. The MUMSched system will verify whether or not the proposed plan of study satisfies the requirements of the degree that the student is seeking.
