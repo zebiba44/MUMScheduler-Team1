@@ -1,4 +1,5 @@
 # MUMScheduler
+
 An online Student/Course Registration system for MIU Computer Science department
 
 
