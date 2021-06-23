@@ -19,7 +19,7 @@ When a student first enrolls at the university, he/she uses the MUMSched to crea
 and chooses a faculty advisor. The MUMSched system will verify whether or not the proposed plan of study satisfies the requirements of the degree that the student is seeking.
 
 Once a plan of study has been established, then, during the registration period preceding each semester, students are able to view the schedule of classes online and choose whichever
- classes they wish to attend, indicating the preferred section (day of the week and time of day) if the class is offered by more than one professor.
+classes they wish to attend, indicating the preferred section (day of the week and time of day) if the class is offered by more than one professor.
 
 The MUMSched will verify whether or not the student has satisfied the necessary prerequisites for each requested course by referring to the student's online transcript of
  courses completed and grades received (the student may also review his/her transcript online at any time).
