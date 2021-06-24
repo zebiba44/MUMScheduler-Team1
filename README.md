@@ -53,7 +53,7 @@ https://www.oracle.com/java/technologies/javase-downloads.html
 2.2 Integrated development environment I suggest intellij or Eclipse for backend and WebStorm Or Visual Studio Code For the front-end . 
 
 Download intellij:
-https://www.jetbrains.com/idea/download/
+ https://www.jetbrains.com/idea/download/
 
 Download Eclipse:
 https://www.eclipse.org/downloads
