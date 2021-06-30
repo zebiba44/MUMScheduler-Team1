@@ -83,6 +83,7 @@ https://www.mysql.com/downloads/
     spring.datasource.password=YOUR PASSWORD
 -After that you can run the project 
 
+2- Create Database in MySql  Named SWE
 
 ```
 
