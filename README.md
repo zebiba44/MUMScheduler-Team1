@@ -7,7 +7,6 @@ App Build with Spring Framework as Back-End.
 1 Getting Started
 
 
-
 ```sh
 1.1 The Goal
 
