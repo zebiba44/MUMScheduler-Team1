@@ -1,0 +1,86 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>Mum Schedule</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+	crossorigin="anonymous">
+    <script type="text/javascript" src="js/src/facultyRest.js" ></script>	
+
+</head>
+
+<body>
+	<section class="col-6 my-2 mx-auto">
+		<article class="card mt-4">
+			<h4 class="card-header text-center text-secondary py-3">Faculty List</h4>
+			<div class="card-body">
+				<table class="mt-4 table table-borderless table-striped table-hover">
+					<thead>
+						<tr>
+							<th scope="col">ID</th>
+							<th scope="col">Faculty Name</th>
+							<th scope="col">Phone number</th>
+							<th scope="col">Address</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="faculty: ${faculties}">
+							<th scope="row" th:text="${faculty.id}" />
+							<td th:text="${faculty.name}" />
+							<td th:text="${faculty.phonenumber}" />
+							<td th:text="${faculty.address}" />
+							<td><a th:href="@{'/faculties/' + ${faculty.id}}">
+							<button style=" background-color: #4CAF50;color: white;
+							"id="submit-btn"
+							class="d-block btn btn-outline-secondary ms-auto">
+							Update</button></a></td>
+							<td><button style=" background-color: #FF0000;color: white;
+							"id="submit-btn" th:onclick="deleteFaculty([[${faculty.id}]],[[${faculty.name}]])"
+							class="d-block btn btn-outline-secondary ms-auto">
+							Delete</button></td>
+						</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
+		</article>
+
+		<article class="card mt-4">
+			<h4 class="card-header text-center text-secondary py-3">Create a
+				New faculty</h4>
+			<div class="card-body">
+				<form method="post" action="http://localhost:8080/api/faculties">
+					<div class="input-group mb-3">
+						<input type="text" class="form-control text-primary"
+							placeholder="Faculty Name" aria-label="Faculty Name" name="name"
+							aria-describedby="Faculty Name" required>
+					</div>
+					
+					<div class="input-group mb-3">
+						<input type="text" class="form-control text-primary"
+							placeholder="Phone number" aria-label="phonenumber" name="phonenumber"
+							aria-describedby="Phone Number" required>
+					</div>
+					
+					<div class="input-group mb-3">
+						<input type="text" class="form-control text-primary"
+							placeholder="Address" aria-label="address" name="address"
+							aria-describedby="address" required>
+					</div>
+				
+					<div>
+						<button type="submit" id="submit-btn"
+							class="d-block btn btn-outline-secondary ms-auto">
+							Create</button>
+					</div>
+				</form>
+			</div>
+		</article>
+	</section>
+</body>
+</html>

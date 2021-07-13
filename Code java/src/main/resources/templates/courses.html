@@ -1,0 +1,73 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>Team 5</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+	crossorigin="anonymous">
+
+</head>
+
+<body>
+	<section class="col-6 my-2 mx-auto">
+		<article class="card mt-4">
+			<h4 class="card-header text-center text-secondary py-3">Courses</h4>
+			<div class="card-body">
+				<table class="mt-4 table table-borderless table-striped table-hover">
+					<thead>
+						<tr>
+							<th scope="col">ID</th>
+							<th scope="col">Code</th>
+							<th scope="col">Name</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="course: ${courses}">
+							<th scope="row" th:text="${course.id}" />
+							<td th:text="${course.code}" />
+							<td th:text="${course.name}" />
+						</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
+		</article>
+
+		<article class="card mt-4">
+			<h4 class="card-header text-center text-secondary py-3">Create a
+				New Course</h4>
+			<div class="card-body">
+				<form method="get"
+					action="${pageContext.request.contextPath}/blocks">
+					<div class="input-group mb-3">
+						<input type="text" class="form-control text-primary"
+							placeholder="Course Code" aria-label="courseCode"
+							aria-describedby="course code" required>
+					</div>
+					<div class="input-group mb-3">
+						<input type="text" class="form-control text-primary"
+							placeholder="Course Name" aria-label="courseName"
+							aria-describedby="course name" required>
+					</div>
+					<div>
+						<button type="submit" id="submit-btn"
+							class="d-block btn btn-outline-secondary ms-auto">
+							Create</button>
+					</div>
+				</form>
+			</div>
+		</article>
+	</section>
+
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+		crossorigin="anonymous"></script>
+</body>
+</html>
