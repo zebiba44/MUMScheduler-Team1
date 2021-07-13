@@ -101,7 +101,7 @@ Anderson Arbelaez Arias 612333
 5 Duration of work
 
 ```sh
-.. days
+03 days
 ```
 
 6 Copyrights
