@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+<meta charset="UTF-8" />
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+	crossorigin="anonymous">
+<link href="/css/general.css" type="text/css" rel="stylesheet">
+<title>SWE - Team 5</title>
+
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light" th:fragment="header">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">Team 5</a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="/admin">Home</a></li>
+
+					<li class="nav-item"><a class="nav-link" href="/faculties">Faculties</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="/students">Students</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="/entries">Entries</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="/courses">Courses</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="/sections">Sections</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="/blocks">Blocks</a>
+					</li>
+				</ul>
+				<form method="GET" action="/logout" class="d-flex">
+					<button class="btn btn-outline-danger" type="submit">Logout</button>
+				</form>
+			</div>
+		</div>
+	</nav>
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light" th:fragment="student-header">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">Team 5</a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="/student">Home</a></li>
+				</ul>
+				<form method="GET" action="/logout" class="d-flex">
+					<button class="btn btn-outline-danger" type="submit">Logout</button>
+				</form>
+			</div>
+		</div>
+	</nav>
+
+	<p>Go to the next page to see fragments in action</p>
+	<aside>
+		<div>This is a sidebar</div>
+	</aside>
+	<div class="another">This is another sidebar</div>
+
+	<footer th:fragment="footer" class="w-100 pb-2">
+		<hr class="mb-2">
+		<p class="test-muted text-secondary text-center pb-2">
+			<a href="https://compro.miu.edu" target="_blank"> <img
+				src="/img/logo.png" height="60" alt="MIU Compro"></img>
+			</a> <br /> <small class="text black-50 text-center">
+				&copy;2021 MIU - SWE Team 5 Application. All Rights Reserved. </small>
+		</p>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+			crossorigin="anonymous"></script>
+	</footer>
+</body>
+</html>
+
+
+
+
+

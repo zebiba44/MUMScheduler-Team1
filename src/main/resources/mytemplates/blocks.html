@@ -1,0 +1,120 @@
+<!doctype html>
+
+<html lang="en">
+<head th:include="fragments/general.html :: head">
+<meta charset="utf-8">
+
+<title>Team 5 - Blocks</title>
+
+
+</head>
+
+<body>
+	<div th:replace="fragments/general.html :: header"></div>
+    
+	<section class="col-6 my-2 mx-auto main-container">
+		<article class="card mt-4">
+			<h4 class="card-header text-center text-secondary py-3">Blocks</h4>
+			<div class="card-body">
+				<table class="mt-4 table table-borderless table-striped table-hover">
+					<thead>
+						<tr>
+							<th scope="col">ID</th>
+							<th scope="col">Name</th>
+							<th scope="col">Date</th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="block: ${blocks}">
+							<th scope="row" class="align-middle" th:text="${block.id}" />
+							<td class="align-middle" th:text="${block.name}" />
+							<td class="align-middle" th:text="${block.date}" />
+							<!-- Button trigger modal -->
+
+							<td class="text-end">
+								<button type="button" class="btn btn-outline-primary"
+									data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+									Update</button>
+								<a th:href="@{'/blocks/' + ${block.id} + '/delete'}"
+									class="btn btn-outline-danger">
+									Delete
+								</a>
+
+								<div class="modal fade" id="staticBackdrop"
+									data-bs-backdrop="static" data-bs-keyboard="false"
+									tabindex="-1" aria-labelledby="staticBackdropLabel"
+									aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header card-header text-secondary">
+												<h5 class="modal-title ms-auto" id="staticBackdropLabel">
+													Update the Block
+												</h5>
+												<button type="button" class="btn-close"
+													data-bs-dismiss="modal" aria-label="Close"></button>
+											</div>
+											<div class="modal-body">
+												<div class="card-body">
+													<form method="post" action="#" th:action="@{'/blocks/' + ${block.id} + '/update'}">
+														<div class="input-group mb-3">
+															<input type="text" class="form-control"
+																placeholder="New Name" aria-label="name" name="name"
+																th:value="${block.name}"
+																aria-describedby="block code" required>
+														</div>
+														<div class="input-group mb-3">
+															<input type="text" class="form-control"
+																placeholder="New Date" aria-label="date" name="date"
+																th:value="${block.date}"
+																aria-describedby="block date" required>
+														</div>
+														<div>
+															<input type="submit" id="submit-btn"
+																class="d-block btn btn-outline-primary ms-auto"
+																value="Confirm the Update">
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</article>
+
+
+
+		<article class="card mt-4">
+			<h4 class="card-header text-center text-secondary py-3">
+				Create a New Block
+			</h4>
+			<div class="card-body">
+				<form method="post" action="/blocks">
+					<div class="input-group mb-3">
+						<input type="text" class="form-control text-primary"
+							placeholder="Block Name" aria-label="name" name="name"
+							aria-describedby="block name" required>
+					</div>
+					<div class="input-group mb-3">
+						<input type="text" class="form-control text-primary"
+							placeholder="Block Date" aria-label="name" name="date"
+							aria-describedby="block date" required>
+					</div>
+					<div>
+						<input type="submit" id="submit-btn"
+							class="d-block btn btn-outline-primary ms-auto" value="Create">
+					</div>
+				</form>
+			</div>
+		</article>
+
+	</section>
+
+	<div th:replace="fragments/general.html :: footer"></div>
+</body>
+</html>
