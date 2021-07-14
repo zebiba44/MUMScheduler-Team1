@@ -87,9 +87,9 @@ const data = {
 http.put(urlB,data, function(err, post){ 
   if(err) { 
     console.log(err); 
-  } else { 
-window.location.href = "http://localhost:8080/students";
-    console.log("hi zozo"); 
+  } else {
+	  history.back();
+	  console.log("hi ayoub");
 
   } 
 }); 
