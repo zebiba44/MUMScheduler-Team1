@@ -77,8 +77,8 @@ https://www.mysql.com/downloads/
 ```sh
 1- Import the back-end and go to src\main\resources\application.properties
 -   In application.properties you should replace 
-    spring.datasource.username=YOUR USERNAME
-    spring.datasource.password=YOUR PASSWORD
+    spring.datasource.username= YOUR USERNAME
+    spring.datasource.password= YOUR PASSWORD
 -After that you can run the project 
 
 2- Create Database in MySql  Named SWE
