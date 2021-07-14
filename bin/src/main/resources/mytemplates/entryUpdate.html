@@ -1,0 +1,131 @@
+<!doctype html>
+
+<html lang="en">
+<head th:include="fragments/general.html :: head">
+	<title>Mum Schedule</title>
+	<script type="text/javascript" src="/js/src/entryRest.js" ></script>	
+	
+
+</head>
+
+<body>
+	<div th:replace="fragments/general.html :: header"></div>
+	<section class="col-6 my-2 mx-auto">
+		<article class="card mt-4">
+			<h4 class="card-header text-center text-secondary py-3">Update
+				Entry</h4>
+			<div class="card-body">
+				<form  th:object="${Entry}" action="/entries/update/" method="POST" name="entryForm">
+					<table>
+						<tr>
+							<div class="input-group mb-3">
+								<td><b>Entry ID : </b></td>
+								<td><input type="text" class="form-control text-primary"
+									th:value="${Entry.id}" aria-label="id" id="id"
+									name="id" aria-describedby="Entry ID" readonly>
+								</td>
+							</div>
+						</tr>
+						
+						<div class="input-group mb-3">
+							<tr>
+								<td><b>Entry Name : </b></td>
+								<td><input type="text" class="form-control text-primary" 
+									th:value="${Entry.name}" aria-label="name"id="name"
+									name="name" aria-describedby="Entry Name" required>
+								</td>
+							</tr>
+						</div>
+						<div class="input-group mb-3">
+							<tr>
+								<td><b>Entry Date</b></td>
+								<td><input type="date" class="form-control "
+								placeholder="entry Date" aria-label="entryDate" name="entryDate" id="entryDate"
+								aria-describedby="entry Date" th:value="${Entry.entryDate}" required></td>
+							</tr>
+						</div>
+
+						<div class="input-group mb-3">
+							<tr>
+								<td><label for="faculty"><b>Choose a faculty:</b></label></td>
+								<td > 
+								<select name="faculty" id="faculty" th:type="*{faculty}" th:field="*{faculty}"  class="dropdown-toggle">
+										<option th:each="faculty: ${faculties}" th:value="${faculty.id}" th:text="${faculty.name}"></option>
+								</select>
+								</td>
+							</tr>
+						</div>
+
+						<div class="input-group mb-3">
+							<tr>
+								<td><b>mpp : </b></td>
+								<td><input type="text" class="form-control text-primary"
+									th:value="${Entry.mpp}" placeholder="mpp" id="mpp"
+									aria-label="mpp" name="mpp"
+									aria-describedby="mpp" required></td>
+							</tr>
+						</div>
+
+						<div class="input-group mb-3">
+							<tr>
+								<td><b>fpp : </b></td>
+								<td><input type="text" class="form-control text-primary"
+									th:value="${Entry.fpp}" placeholder="fpp" id="fpp"
+									aria-label="fpp" name="fpp"
+									aria-describedby="fpp" required></td>
+							</tr>
+						</div>
+
+						<div class="input-group mb-3">
+							<tr>
+								<td><b>mppCPT : </b></td>
+								<td><input type="text" class="form-control text-primary"
+									th:value="${Entry.mppCPT}" placeholder="mppcpt" id="mppCPT"
+									aria-label="mppcpt" name="mppCPT"
+									aria-describedby="mppcpt" required></td>
+							</tr>
+						</div>
+
+						<div class="input-group mb-3">
+							<tr>
+								<td><b>mppOPT : </b></td>
+								<td><input type="text" class="form-control text-primary"
+									th:value="${Entry.mppOPT}" placeholder="mppopt" id="mppOPT"
+									aria-label="mppopt" name="mppOPT"
+									aria-describedby="mppopt" required></td>
+							</tr>
+						</div>
+
+						<div class="input-group mb-3">
+							<tr>
+								<td><b>fppCPT : </b></td>
+								<td><input type="text" class="form-control text-primary"
+									th:value="${Entry.fppCPT}" placeholder="fppcpt" id="fppCPT"
+									aria-label="fppcpt" name="fppCPT"
+									aria-describedby="fppcpt" required></td>
+							</tr>
+						</div>
+
+						<div class="input-group mb-3">
+							<tr>
+								<td><b>fppOPT : </b></td>
+								<td><input type="text" class="form-control text-primary"
+									th:value="${Entry.fppOPT}" placeholder="fppopt" id="fppOPT"
+									aria-label="fppopt" name="fppOPT"
+									aria-describedby="fppopt" required></td>
+							</tr>
+						</div>
+						
+					</table>
+					<div>
+						<button  id="submitEntry"
+							class="d-block btn btn-outline-secondary ms-auto">
+							Update</button>
+					</div>
+				</form>
+			</div>
+		</article>
+	</section>
+	<div th:replace="fragments/general.html :: footer"></div>
+</body>
+</html>

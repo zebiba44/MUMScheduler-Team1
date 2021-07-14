@@ -74,6 +74,12 @@ public class SectionController {
 		return "sectionDetail";
 	}
 	
+	@GetMapping("/sections/delete/{id}")
+    public ModelAndView deleteSection(@PathVariable Long id) {
+        service.deleteSection(id);
+        ModelAndView mav = new ModelAndView("redirect:/sections");
+        return mav;
+    }
 
 
 	@RestController
@@ -117,13 +123,6 @@ public class SectionController {
 	    	return service.updateSection(section,id);
 	    }
 
-	    @DeleteMapping("/api/sections/{id}")
-	    public ModelAndView deleteSection(@PathVariable Long id) {
-	        service.deleteSection(id);
-	        ModelAndView mav = new ModelAndView("redirect:/sections");
-	        return mav;
-	    }
-	    
 	    @GetMapping("/api/sections/{id}/addStudent/{stdId}")
 	    public ModelAndView addStudentToSection(Model model ,@PathVariable Long id,
 	    		@PathVariable int stdId) {
