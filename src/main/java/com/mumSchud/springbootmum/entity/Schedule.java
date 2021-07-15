@@ -13,7 +13,13 @@ public class Schedule {
 	@Id
     @GeneratedValue
     private Long id ;
-    private ScheduleStatus status ;
+    private ScheduleStatus status;
+    
+    public Schedule() {}
+    
+    public Schedule(ScheduleStatus status) {
+    	this.status = status;
+    }
  
     public Long getId() {
         return id;

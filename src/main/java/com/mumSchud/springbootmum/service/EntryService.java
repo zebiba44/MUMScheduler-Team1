@@ -13,6 +13,12 @@ import java.util.List;
 public class EntryService {
     @Autowired(required = true)
     private EntryRepository repository;
+    
+    public EntryService() {}
+    
+    public EntryService(EntryRepository repository) {
+    	this.repository = repository;
+    }
 
     public Entry saveEntry(Entry Entry) {
         return repository.save(Entry);

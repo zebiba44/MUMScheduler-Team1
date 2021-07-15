@@ -13,6 +13,12 @@ import java.util.List;
 public class ScheduleService {
     @Autowired(required = true)
     private ScheduleRepository repository;
+    
+    public ScheduleService() {}
+    
+    public ScheduleService(ScheduleRepository repository) {
+    	this.repository = repository;
+    }
 
     public Schedule saveSchedule(Schedule schedule) {
         return repository.save(schedule);

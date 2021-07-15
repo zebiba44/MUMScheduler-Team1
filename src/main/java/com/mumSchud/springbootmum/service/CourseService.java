@@ -14,6 +14,12 @@ public class CourseService {
 	@Autowired
 	private CourseRepository repository;
 	
+	public CourseService() {}
+	
+	public CourseService(CourseRepository repository) {
+		this.repository = repository;
+	}
+	
 	public List<Course> findAll() {
 		return repository.findAll(); 
 	}
