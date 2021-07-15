@@ -13,6 +13,12 @@ import java.util.List;
 public class facultyService {
     @Autowired(required = true)
     private FacultyRepository repository;
+    
+    public facultyService() {}
+    
+    public facultyService(FacultyRepository repository) {
+    	this.repository = repository;
+    }
 
     public Faculty saveFaculty(Faculty faculty) {
         return repository.save(faculty);

@@ -4,7 +4,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -74,6 +73,12 @@ public class SectionController {
 		return "sectionDetail";
 	}
 	
+	@GetMapping("/sections/delete/{id}")
+    public ModelAndView deleteSection(@PathVariable Long id) {
+        service.deleteSection(id);
+        ModelAndView mav = new ModelAndView("redirect:/sections");
+        return mav;
+    }
 
 
 	@RestController
@@ -117,13 +122,6 @@ public class SectionController {
 	    	return service.updateSection(section,id);
 	    }
 
-	    @DeleteMapping("/api/sections/{id}")
-	    public ModelAndView deleteSection(@PathVariable Long id) {
-	        service.deleteSection(id);
-	        ModelAndView mav = new ModelAndView("redirect:/sections");
-	        return mav;
-	    }
-	    
 	    @GetMapping("/api/sections/{id}/addStudent/{stdId}")
 	    public ModelAndView addStudentToSection(Model model ,@PathVariable Long id,
 	    		@PathVariable int stdId) {

@@ -1,0 +1,20 @@
+body {
+	position: relative;
+	min-height: 100vh;
+}
+
+.main-container {
+	text-align: center;
+	margin-top: 120px;
+	padding-bottom: 2.5rem;
+}
+
+footer {
+	height: 2.5rem;
+	position: absolute;
+	bottom: 0;
+}
+
+a {
+	text-decoration: none;
+}

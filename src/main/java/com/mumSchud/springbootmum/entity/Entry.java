@@ -27,7 +27,7 @@ public class Entry {
     @GeneratedValue
     private int id;
     private String name;
-    
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate entryDate;
     private int mpp;
     private int fpp;

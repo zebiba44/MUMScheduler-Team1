@@ -13,6 +13,12 @@ public class BlockService {
 
 	@Autowired
 	private BlockRepository repository;
+	
+	public BlockService() {}
+	
+	public BlockService(BlockRepository repository) {
+		this.repository = repository;
+	}
 
 	public List<Block> findAll() {
 		return repository.findAll();
